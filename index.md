@@ -1,6 +1,7 @@
 ---
-title: Welcome to Quartz
+title: Dani's Hive
 ---
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+I am a busy bee 🐝 and this is my digital hive where I cultivate thoughts and connect dots as an extension to https://cb341.dev/threads/.
+
+
