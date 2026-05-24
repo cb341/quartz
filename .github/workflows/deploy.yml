@@ -1,7 +1,7 @@
 name: Build Quartz Site
 on:
   push:
-    branches: ["publishing"]
+    branches: ["content"]
 permissions:
   contents: read
   pages: write
