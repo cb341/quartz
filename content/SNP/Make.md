@@ -12,9 +12,7 @@ main.o: main.c header.h
 The `=` operator represents lazy evaluation (variable is expanded every time it is referenced), while `:=` represents immediate evaluation (value is expanded and fixed once at declaration).
 
 ```makefile
-# expanded on every use
 LDFLAGS = -lm
-# evaluated once now
 CFLAGS := -Wall -Wextra
 ```
 
@@ -23,11 +21,8 @@ CFLAGS := -Wall -Wextra
 Shortcut variables that simplify rule writing. `$@` is the target name, `$^` is the entire dependency list, and `$<` is the first dependency name.
 
 ```diff
-# How it is done without automatic variables:
 program: main.o utils.o
 -	gcc -o program main.o utils.o
-
-# How it is done with automatic variables:
 program: main.o utils.o
 +	gcc -o $@ $^
 ```
@@ -40,7 +35,6 @@ If a file named `clean` exists on disk, `make` may skip the command assuming it 
 .PHONY: clean
 clean:
 	-rm -f *.o program
-
 ```
 
 ## pattern rules & substitution
@@ -53,7 +47,6 @@ OBJECTS = $(SOURCES:%.c=%.o)
 
 %.o: %.c
 	gcc -c $< -o $@
-
 ```
 
 ## command silencing & error ignoring
